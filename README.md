@@ -3,9 +3,10 @@
 This project is an Arduino-based system for automatically opening and closing doors. It features password entry, RFID tag and card recognition for door access, and EEPROM for data storage and management.
 
 ## 🖼️ Project Images
-### Diagram Overview
 
-![Real-Time Monitoring](block_diagram.jpg)  
+### Main Images
+
+![Real-Time Monitoring](./image/main.jpg)  
 
 ---
 
@@ -17,9 +18,7 @@ This project is an Arduino-based system for automatically opening and closing do
 
 ---
 
-### Main Images
-
-![Real-Time Monitoring](./image/main.jpg)  
+![Real-Time Monitoring](block_diagram.jpg)  
 
 ---
 
