@@ -1,86 +1,95 @@
-# Arduino Auto Door System
-
-This project is an Arduino-based system for automatically opening and closing doors. It features password entry, RFID tag and card recognition for door access, and EEPROM for data storage and management.
-
-## 🖼️ Project Images
-
-### Main Images
-
-![Real-Time Monitoring](./image/main.jpg)  
+## Arduino Auto Door System
 
 ---
 
-## 📊 System Architecture Diagram
+## 🖼️ 프로젝트 이미지
 
-### Diagram Overview
+### 주요 이미지
+
+![Real-Time Monitoring](./image/main.jpg)
+
+---
+
+## 📊 시스템 아키텍처 다이어그램
+
+### 다이어그램 개요
 
 ![System Diagram](flowchart.png)
 
 ---
 
-![Real-Time Monitoring](block_diagram.jpg)  
+### 블록 다이어그램
+
+![Real-Time Monitoring](block_diagram.jpg)
 
 ---
 
-## Key Components
+## 주요 구성 요소
 
-- **Arduino Board**: Core controller of the project
-- **RFID Reader**: Recognizes tags and cards to unlock the door
-- **EEPROM**: Stores user data for persistence across reboots
-- **Keypad Matrix**: For password entry
-- **LCD Display**: Shows system status and messages
-- **Servo Motor**: Handles the door movement
-- **Piezo Buzzer**: Provides notification sounds
-- **7-Segment Display**: Displays additional information
+- **Arduino 보드**: 프로젝트의 핵심 제어 장치
+- **RFID 리더**: 태그 및 카드를 인식하여 문을 잠금 해제
+- **EEPROM**: 데이터 저장 및 재부팅 시 데이터 유지
+- **키패드 매트릭스**: 비밀번호 입력용
+- **LCD 디스플레이**: 시스템 상태 및 메시지 표시
+- **서보 모터**: 문 움직임 제어
+- **피에조 버저**: 알림 소리 제공
+- **7-세그먼트 디스플레이**: 추가 정보 표시
 
-## Main Features
+---
 
-1. **Password Authentication**
-   - Allows users to unlock the door by entering a password.
+## 주요 기능
 
-2. **RFID Authentication**
-   - Unlocks the door when a registered RFID tag or card is detected.
+1. **비밀번호 인증**
+   - 비밀번호 입력으로 문을 잠금 해제.
 
-3. **EEPROM Data Storage**
-   - Stores user passwords and registered tag information, ensuring data persistence after power cycling.
+2. **RFID 인증**
+   - 등록된 RFID 태그나 카드 감지 시 문 잠금 해제.
 
-4. **Status Display**
-   - Displays the current system status on an LCD.
+3. **EEPROM 데이터 저장**
+   - 사용자 비밀번호와 등록된 태그 정보를 저장하여 전원 재시작 후에도 데이터 유지.
 
-## Code Structure
+4. **상태 표시**
+   - LCD를 통해 현재 시스템 상태를 실시간으로 표시.
 
-### Key Header Files
-- `Control_Pwd.h`: Includes functionality for password input and control
-- `KeyMatrix.h`: Configures and operates the keypad matrix
-- `LCD.h`: Manages the LCD display
-- `Motor.h`: Handles servo motor operations
-- `Sound.h`: Controls the piezo buzzer for notifications
-- `7Segment.h`: Operates the 7-segment display
+---
 
-### Main Functions
-- `Set_Matrix()`: Initializes the keypad
-- `Set_RFRC()`: Initializes the RFID reader
-- `Set_Lcd()`: Initializes the LCD display
-- `Set_piezo()`: Initializes the buzzer
-- `Set_Servo()`: Initializes the servo motor
-- `Set_Segment()`: Initializes the 7-segment display
-- `Show_Lock_Door()`: Displays the locked state
-- `Open_Door()`: Handles the door unlocking process
-- `Set_RFRC_Pwd()`: Processes RFID or password recognition
-- `Sign_up()`: Registers a new user
-- `Save_EEPROM()`: Saves user data to EEPROM
+## 코드 구조
 
-## Hardware Connections
+### 주요 헤더 파일
+- `Control_Pwd.h`: 비밀번호 입력 및 제어 기능 포함
+- `KeyMatrix.h`: 키패드 매트릭스 구성 및 운영
+- `LCD.h`: LCD 디스플레이 관리
+- `Motor.h`: 서보 모터 제어
+- `Sound.h`: 알림용 피에조 버저 제어
+- `7Segment.h`: 7-세그먼트 디스플레이 제어
 
-1. **RFID Reader**
-   - Connects to Arduino via SPI interface
-2. **Keypad Matrix**
-   - Connects to digital pins for input signal processing
-3. **Servo Motor**
-   - Controlled via PWM pins
-4. **LCD Display**
-   - Connects to Arduino via I2C interface
-5. **7-Segment Display**
-   - Connects to digital pins for displaying status information
-6. **Piezo Buzzer**
-   - Controlled via digital pins for sound notifications
+### 주요 함수
+- `Set_Matrix()`: 키패드 초기화
+- `Set_RFRC()`: RFID 리더 초기화
+- `Set_Lcd()`: LCD 디스플레이 초기화
+- `Set_piezo()`: 버저 초기화
+- `Set_Servo()`: 서보 모터 초기화
+- `Set_Segment()`: 7-세그먼트 디스플레이 초기화
+- `Show_Lock_Door()`: 잠금 상태 표시
+- `Open_Door()`: 문 잠금 해제 프로세스 처리
+- `Set_RFRC_Pwd()`: RFID 또는 비밀번호 인식 처리
+- `Sign_up()`: 새로운 사용자 등록
+- `Save_EEPROM()`: 사용자 데이터를 EEPROM에 저장
+
+---
+
+## 하드웨어 연결
+
+1. **RFID 리더**
+   - SPI 인터페이스를 통해 Arduino와 연결
+2. **키패드 매트릭스**
+   - 디지털 핀에 연결하여 입력 신호 처리
+3. **서보 모터**
+   - PWM 핀을 통해 제어
+4. **LCD 디스플레이**
+   - I2C 인터페이스를 통해 Arduino와 연결
+5. **7-세그먼트 디스플레이**
+   - 디지털 핀에 연결하여 상태 정보 표시
+6. **피에조 버저**
+   - 디지털 핀을 통해 소리 알림 제어
+
